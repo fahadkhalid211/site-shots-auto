@@ -1,4 +1,27 @@
 {
   "site": "https://quiddle.com",
-  "login_url": ""
+  "device": "iPhone 15 Pro",
+  "capture": "full",
+  "frame": true,
+  "frame_bg": "#e9edf3",
+  "timestamp": true,
+  "post_types": [
+    "post",
+    "page",
+    "forum",
+    "topic",
+    "reply",
+    "music",
+    "podcasts",
+    "quote",
+    "tv-show",
+    "at_biz_dir",
+    "product",
+    "advert",
+    "courses",
+    "lesson",
+    "tutor_quiz",
+    "tutor_assignments",
+    "dashboard_page"
+  ]
 }
