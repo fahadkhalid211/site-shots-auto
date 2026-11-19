@@ -28,11 +28,8 @@ jobs:
 
       - name: Capture all pages
         env:
-          CHROME_PATH: /usr/bin/google-chrome
           WP_USER: ${{ secrets.WP_USER }}
           WP_PASS: ${{ secrets.WP_PASS }}
-          WP_COOKIES: ${{ secrets.WP_COOKIES }}
-          LOGIN_URL: ${{ vars.LOGIN_URL }}
         run: node capture.mjs
 
       - name: Publish to shots branch
