@@ -1,0 +1,17 @@
+.ssa-bar { margin: 16px 0 10px; }
+.ssa-track { height: 10px; background: #dcdcde; border-radius: 6px; overflow: hidden; max-width: 700px; }
+.ssa-fill { height: 100%; width: 0; background: #2271b1; transition: width .25s; }
+.ssa-text { margin: 6px 0 14px; color: #50575e; }
+.ssa-table { margin-top: 12px; }
+.ssa-table td { vertical-align: middle; }
+.ssa-thumb {
+	width: 110px;
+	height: 70px;
+	object-fit: cover;
+	object-position: top;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	display: block;
+	background: #fff;
+}
+.ssa-err { color: #b32d2e; }

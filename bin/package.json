@@ -1,0 +1,9 @@
+{
+  "name": "site-shots-auto-bin",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Puppeteer-core runner for Site Shots Auto. Uses installed Chrome, Chromium or Edge. No browser download.",
+  "dependencies": {
+    "puppeteer-core": "^22.15.0"
+  }
+}
