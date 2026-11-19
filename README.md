@@ -2,7 +2,11 @@
 
 Free full-page screenshots via GitHub Actions. Used with the "Site Shots Auto" WordPress plugin.
 
-Daily (and on demand) it captures every page and publishes images to branch `shots`.
-Plugin pulls them into WordPress.
-
-Edit `config.json` -> set your site URL.
+## Setup
+1. Edit `config.json`: set `site`. Set `login_url` only if login page is not /wp-login.php.
+2. Logged-in capture: Settings > Secrets and variables > Actions > New repository secret
+   - `WP_USER`  username of a dedicated member account
+   - `WP_PASS`  its password
+   Optional `WP_COOKIES`: JSON cookie export (use when login has captcha or 2FA).
+3. Use a PRIVATE repo when capturing members-only pages.
+4. Actions > Site Shots > Run workflow.
