@@ -7,7 +7,7 @@ const cfg = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 const SITE = cfg.site.replace(/\/+$/, '');
 const LOGIN_URL = cfg.login_url || SITE + '/wp-login.php';
 const DEVICE = KnownDevices[cfg.device || 'iPhone 15 Pro'] || KnownDevices['iPhone 15 Pro Max'];
-const OUT = 'shots';
+const OUT = 'out/shots';
 const USER = process.env.WP_USER, PASS = process.env.WP_PASS;
 const LOGGED_OUT_HINTS = (cfg.logged_out_text || [
   'you need to login', 'you must be logged in', 'please log in', 'please login',
