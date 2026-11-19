@@ -1,0 +1,44 @@
+name: Site Shots
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'   # daily 03:00 UTC. Edit or delete as needed.
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-shots
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Capture all pages
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: node capture.mjs
+
+      - name: Publish to shots branch
+        run: |
+          cd out
+          git init -q
+          git checkout -q -b shots
+          git config user.name "site-shots-bot"
+          git config user.email "site-shots-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Screenshots $(date -u +%F)"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push -q -f origin shots
