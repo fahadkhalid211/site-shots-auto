@@ -1,9 +1,8 @@
 {
-  "name": "site-shots-runner",
+  "name": "site-shots-auto",
   "version": "1.0.0",
-  "private": true,
   "type": "module",
   "dependencies": {
-    "puppeteer-core": "^22.15.0"
+    "puppeteer": "^23.0.0"
   }
 }
